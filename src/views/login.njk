@@ -1,0 +1,15 @@
+{% extends "./base.njk" %}
+{% block content %}
+        <form action="/users/login" method="post" class="loginForm">
+            <input type="text" name="username" placeholder="Enter your username"/>
+            <input type="password" name="password" placeholder="Enter your password"/>
+            <button class="button login">Login</button>
+            <p>
+                No account yet?
+                                Please
+                <a href="/registration">
+                    Sign up
+                </a>
+            </p>
+        </form>
+{% endblock %}

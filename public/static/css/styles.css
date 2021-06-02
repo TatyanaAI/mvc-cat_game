@@ -1,0 +1,271 @@
+body{
+    background: ghostwhite;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1000px;
+    margin: 0 auto;
+    background: gainsboro;
+    border-radius:2px;
+    padding: 0 3% 0 3%;
+}
+
+.logoContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+}
+
+.logo {
+    width: 20%
+}
+
+.logo img {
+    width: 80px;
+    height: 100px;
+}
+
+.header{
+    font-weight: 700;
+}
+
+.menu {
+    display: flex;
+    width: 25%;
+    text-align: center;
+    align-items: center;
+}
+
+.login {
+    text-decoration: none;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius:5px;
+    color: white;
+    line-height: 40px;
+    text-align: center; 
+    background-color: black;
+    text-transform: uppercase;
+    margin-right: 5px;
+}
+
+.login:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid lightgray;
+}
+
+.logout, .button {
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 700;
+    width: 100px;
+    height: 40px;
+    border: 2px solid lightgray;
+    border-radius:5px;
+    color: black;
+    line-height: 34px;
+    text-align: center; 
+    background-color: white;
+    text-transform: uppercase;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.logout:hover{
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+}
+
+ .button:hover{
+    background-color: gainsboro;
+    border: 2px solid black;
+}
+
+.registration, .addCatForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto ;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: black;
+}
+
+input{
+    min-width: 250px;
+    height: 40px;
+    font-size: 16px;
+    margin: 0 20px 15px 20px;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
+input:first-child{
+    margin: 20px 20px 15px 20px;
+}
+
+.button {
+    min-width: 250px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto ;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
+.loginForm input{
+    border: 2px solid black;
+    background-color: lightgray;
+    color:black;
+}
+
+.button.login{
+    background-color:black;
+    color: white;
+    border: 2px solid white;
+}
+
+.button.login:hover{
+    background-color:gainsboro;
+    color: black;
+    border: 2px solid black;
+}
+
+.catsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.mainTitle{
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+ .cats{
+    margin: 20px 0 20px;
+    padding-bottom: 20px;
+    border-radius: 8px; 
+    background-color: white;
+} 
+
+tr th{
+    border-bottom: 2px solid black;
+    background-color:black;
+    color: white;
+    padding: 4px;
+    font-size: 18px;
+    width: 40%;
+}
+
+tr td{
+    padding: 4px;
+}
+
+.cats td{
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+}
+
+.cats td a{
+    text-decoration: none;
+    color: black;
+}
+
+.cats td a:hover{
+    text-decoration: none;
+    color: gold;
+}
+
+.actionButtons{
+    display: flex;
+    flex-direction: row;
+    padding: 5px 10px;
+}
+
+
+.deleteButton{
+    width: 120px;
+    height: 40px;
+    line-height: 35px;
+    border:none;
+    border: 2px solid white;
+    background: tomato;
+    color:white;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.deleteButton:hover{
+    background-color:lightsalmon;
+    color: gainsboro;
+}
+
+
+select{
+    width: 280px;
+    height: 35px;
+    font-size: 16px;
+    margin-top: 10px;
+    color: black;
+}
+
+.catPage{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.catPage img{
+   width: 300px;
+   margin-bottom: 20px;
+}
+
+.catPage button:hover{
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+}
+
+.catInfoWrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 80px;
+}
+
+.catInfo{
+    text-align: center;
+    background-color:whitesmoke
+}
+
+.catInfo td{
+   border: 1px solid black;
+}

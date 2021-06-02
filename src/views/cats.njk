@@ -1,0 +1,69 @@
+{% extends "./base.njk" %}
+{% block title %}Cat Game{% endblock %}
+{% block content %}
+    <div class="catPage">
+        <div class="catPortfolio">
+            <h1 class="mainTitle">
+                Cat - {{ cat.name }}
+            </h1>
+            {% if cat.sleeping %}
+                <img src="/static/images/sleeping-cat.jpg" alt="cat img"/>
+            {% elseif cat.happinessLevel > 70 %}
+                <img src="/static/images/happy-cat.jpg" alt="cat img"/>
+            {% elseif cat.happinessLevel > 50 %}
+                <img src="/static/images/cat.jpg" alt="cat img"/>
+            {% elseif cat.happinessLevel > 20 %}
+                <img src="/static/images/cat-2.jpg" alt="cat img"/>
+            {% else %}
+                <img src="/static/images/grumpy-cat.jpg" alt="cat img"/>
+            {% endif %}
+        </div>
+        <div class="catInfoWrapper">
+            <table class="catInfo">
+                <tr>
+                    <th>
+                        Age</th>
+                    <td>
+                        {{ cat.age }} years
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Happiness level
+                    </th>
+                    <td>
+                        {{ cat.happinessLevel }} points
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Hunger level
+                    </th>
+                    <td>
+                        {{ cat.hungerLevel }} points
+                    </td>
+                </tr>
+            </table>
+            <form action="/cats/actions/{{ cat.id }}" method="post" class="actionsForm">
+                <select name="action">
+                    {% if not cat.sleeping %}
+                        <option value="feed">
+                            Feed
+                        </option>
+                    {% endif %}
+                    <option value="play">
+                        Play
+                    </option>
+                    {% if not cat.sleeping %}
+                        <option value="sleep">
+                            Get Sleep
+                        </option>
+                    {% endif %}
+                </select>
+                <button class="button">
+                    Do it
+                </button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

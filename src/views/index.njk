@@ -1,0 +1,60 @@
+{% extends "./base.njk" %}
+{% block title %}Cat Game{% endblock %}
+{% block content %}
+    {% if not user %}
+        <h1 class="mainTitle">
+            <a href="/login">
+                Log in to start Your Cat Game ➜
+            </a>
+            <p></p>
+        </h1>
+    {% elseif user and cats.length === 0 %}
+        <form action="/cats/new" method="post" class="addCatForm">
+            <input name="name" type="text" placeholder="Enter your cat's name"/>
+            <button class="button">
+                Add cat
+            </button>
+        </form>
+    {% else %}
+        <div class="catsContainer">
+            <h1 class="mainTitle">
+                Choose your Cat
+            </h1>
+            Click on the name in the table
+            <table >
+                <tr>
+                    <th>
+                        Name</th>
+                    <th>
+                        Age</th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+                {% for cat in cats %}
+                    <tr class="cats">
+                        <td>
+                            <a href="/cats/{{ cat.id }}">{{ cat.name }}</a>
+                        </td>
+                        <td>
+                            {{ cat.age }}
+                        </td>
+                        <td class="actionButtons">
+                            <form action="/cats/delete/{{ cat.id }}" method="post" class="">
+                                <button class="deleteButton">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <form action="/cats/new" method="post" class="addCatForm">
+                <input name="name" type="text" placeholder="Enter your cat's name"/>
+                <button class="button">
+                    Add cat
+                </button>
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}

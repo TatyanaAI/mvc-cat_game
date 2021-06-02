@@ -1,0 +1,22 @@
+<header class="header">
+    <div class="container">
+        <div class="logoContainer">
+            <a href="/" class="logo">
+                <img src="/static/images/logo-cat.png"></a>
+                <h1>
+                    {{ "Cat Game"| upper }}
+                </h1>
+            </div>
+            <div class="menu">
+                {% if user %}
+                    <h3>Hello, {{ user.username }}</h3>
+                    <form action="/users/logout" method="post" >
+                        <button class="logout">Log out</button>
+                    </form>
+                {% endif %}
+                {% if not user %}
+                    <a href="/login" class="login">Log in</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
